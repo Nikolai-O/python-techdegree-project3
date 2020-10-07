@@ -3,18 +3,18 @@ import random
 
 
 class Game:
+    def __init__(self):
+        self.missed = 0
+        self.phrases = self.create_phrases()
+        self.active_phrase = self.get_random_phrase()
+        self.guesses = []
+        
     def create_phrases(self):
         phrases = [Phrase("Most things that never get done never get done because they never get started"), Phrase("Discipline equals freedom"), Phrase("Do what you can with all you have wherever you are"), Phrase("Get after it"), Phrase("Up and Rock and Roll")]
         return phrases
 
     def get_random_phrase(self):
         return random.choice(self.phrases)
-
-    def __init__(self):
-        self.missed = 0
-        self.phrases = self.create_phrases()
-        self.active_phrase = self.get_random_phrase()
-        self.guesses = []
 
     def welcome(self):
         print("="*60+"""
