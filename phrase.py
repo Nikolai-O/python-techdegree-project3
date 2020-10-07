@@ -2,13 +2,6 @@ class Phrase:
     def __init__(self, phrase):
         self.phrase = phrase.lower()
 
-    def __iter__(self):
-        yield from self.phrase
-
-    def __eq__(self, other):
-        if self == other:
-            return True
-
     def display(self, guesses):
         for letter in self.phrase:
             if letter in guesses:
